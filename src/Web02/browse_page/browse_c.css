@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/pic/main_bg2');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+#img1 {
+    background-image: url('/pic/user');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    border-radius: 50%;
+    border: 3px solid black;
+}
+
+#upside_pc {
+    height: 100px;
+    position: fixed;
+    background: linear-gradient(to bottom, #001382, #002fcfbb);
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.title {
+    position: absolute;
+    color: white;
+    left: 1%;
+    top: 18%;
+}
+
+#page {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    height: 75px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+
+page.pagination {
+    display: inline-block;
+}
+
+    page.pagination li {
+        display: inline;
+    }
+
+        page.pagination li a {
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+            page.pagination li a.active {
+                background-color: #001171;
+                color: white;
+            }
+
+            page.pagination li a:hover:not(.active) {
+                background-color: #00fffc3b;
+            }
+
+.search_title {
+    position: absolute;
+    top: 60px;
+    left: 35px;
+    font-size: 20px;
+    text-align: left;
+    line-height: 20px;
+    color: black;
+    font-family: Arial;
+    letter-spacing: 1px;
+}
+
+.book_div {
+    position: absolute;
+    height: 350px;
+    width: 250px;
+    background: linear-gradient(to bottom, #00fffca4, #00d0ffa4);
+    text-align: right;
+    top: 20px;
+    left: 30px;
+}
+
+.search_div {
+    height: 27px;
+    width: 100%;
+    border-radius: 2px;
+    background: linear-gradient(to bottom, #ffffffff, #ffffffff, #b8b8b8ff);
+    border-bottom: 1px solid gray;
+    text-align: left;
+    display: inline-block;
+    color: black;
+}
+
+    .search_div:hover {
+        background: linear-gradient(to bottom, gold, gold, #423700);
+    }
+    .bg_01 {
+        position: fixed;
+        height: 100%;
+        width: 24%;
+        border-right: 25px double #4800ffa1;
+        border-left: 25px double #4800ffa1;
+        background: linear-gradient(60deg, #0026ff, gold, #6123ffc5);
+        text-align: center;
+    }
+
+.bg_02 {
+    position: absolute;
+    height: 2100px;
+    top: 100px;
+    width: 76%;
+    right: 0;
+    background: #ffffffb8;
+}
+
+.bg_021 {
+    position: absolute;
+    min-height: 300px;
+    width: 76%;
+    top: 100px;
+    right: 0;
+    text-align: center;
+    background: #ffffffb8;
+}
+
+.bg_03 {
+    position: fixed;
+    height: 580px;
+    width: 25%;
+    top: 100px;
+    left: 0;
+    text-align: center;
+}
+
+.bg_04 {
+    position: absolute;
+    height: 25px;
+    top: 105px;
+    width: 80%;
+    left: 7.5%;
+}
+
+.bg_05 {
+    position: absolute;
+    height: 5px;
+    width: 90%;
+    bottom: 90px;
+    left: 5%;
+    border: 5px double black;
+}
+
+    .bg_05:nth-child(1) {
+        top: 20px;
+    }
+
+    .bg_05:nth-child(2) {
+        top: 105px;
+        width: 90%;
+        height: 10px;
+        left: 5%;
+        border: 5px double black;
+        background-color: gold;
+    }
+
+    .bg_05:nth-child(3) {
+        top: 20px;
+    }
+
+div.bg_06 {
+    position: absolute;
+    height: 25px;
+    width: 80%;
+    top: 20%;
+    left: 40px;
+    font-size: 28px;
+    text-align: center;
+    line-height: 30px;
+    color: black;
+    font-family: 'SJxinweibeijian', serif;
+    letter-spacing: 2px;
+    display: inline;
+}
+
+    div.bg_06 li a {
+        text-align: left;
+        color: white;
+        float: left;
+        height: 50px;
+        width: 85%;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+        div.bg_06 li a.active {
+            background: linear-gradient(70deg, blue, pink);
+        }
+
+        div.bg_06 li a:hover:not(.active) {
+            background: linear-gradient(70deg, gold, white);
+            color: black;
+        }
+
+.img2 {
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    top: 3%;
+    border-radius: 5%;
+    border: 3px solid gray;
+}
+
+.search_img {
+    height: 80px;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    bottom: 12%;
+}
+
+.book_name {
+    height: 15%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 5%;
+    text-align: center;
+    background: #ffffff6a;
+}
+
+#footer_pc {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 80px;
+    line-height: 40px;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to bottom, #4800ffd5, #0c002b);
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 12px;
+    letter-spacing: 1px;
+}

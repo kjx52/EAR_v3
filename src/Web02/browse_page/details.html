@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="/pic/ear_v3_icon">
+		<link rel="stylesheet" href="/book/style/browse_detail">
+		<title>浮声 {{ book_name }}详细信息</title>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<div class="bg_02"></div>
+		<div id="upside_pc_2"></div>
+		<div id="upside_pc_1">
+			<div class="title">
+				<font size="5">
+					<a href="/access/browse_i1"><B>< 返回</B></a>
+				</font>
+			</div>
+			<a href="/access/user/user_info_d1">
+				<div id="img1"></div>
+			</a>
+		</div>
+		<div class="bg_01">
+			<div class="div_1">
+				{{ book_image }}
+			</div>
+			<div class="div_3">
+				{{ book_info }}
+			</div>
+			<div class="div_3_5">
+				<div class="div_4">
+					<p>
+						简介：<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ book_intro }}
+					</p>
+					<br><hr><br>
+					分类：{{ book_class }}
+				</div>
+			</div>
+
+			<div class="div_btn" onclick="showPopup()">
+				{{ operation }}
+			</div>
+
+			<div class="cl_line">
+			</div>
+		</div>
+		<div id="footer_pc">
+			Copyright © 2022-2026
+			<font style="font-family: 'a_AlgeriusCmFtz1', serif;">Двигатель Ржавчина</font>
+			&nbsp;
+			<strong>10.129.136.9</strong>
+			All Rights Reserved. 备案号：陕ICP备202412807号-1
+			<br>
+			Power By <B><I>Jessarin000</I></B>
+		</div>
+			{{ borrowed_num }}
+
+			<script>
+				const nameInput = document.getElementById("cap_num");
+				nameInput.addEventListener("input", () => {
+					nameInput.setCustomValidity("");
+					nameInput.checkValidity();
+				});
+				nameInput.addEventListener("invalid", () => {
+					if (nameInput.value === "") {
+						nameInput.setCustomValidity("请输入验证码");
+					} else {
+						nameInput.setCustomValidity("验证码只能包含字母或数字。");
+					}
+				});
+				const nameInput2 = document.getElementById("form01");
+				nameInput2.addEventListener("submit", () => {
+					event.preventDefault();
+					console.log("submit");
+					const cap_num = document.getElementById('cap_num').value;
+					fetch(window.location.pathname, {
+						method: 'PUT',
+						headers: {
+							'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;',
+							'Cache-Control': 'max-age=0',
+							'Upgrade-Insecure-Requests': '1'
+						},
+						body: `cap_num=${cap_num}`
+					})
+						.then(response => {
+							console.log(response);
+							if (response.ok) {
+								alert('提交成功。');
+								window.location.replace("/access/user/user_info_d3");
+
+							} else {
+								alert('请求失败。');
+								document.getElementById('cap_img').src = "/pic/cap";
+							}
+						})
+						.catch(error => console.error('Error:', error))
+				});
+
+				function showPopup() {
+					setTimeout(() => document.getElementById('popup').style.display = 'block', 100);
+					document.getElementById('re_font').style.display = 'none';
+				}
+
+				function hidePopup() {
+					document.getElementById('popup').style.display = 'none';
+				}
+
+				function refresh_cap() {
+					document.getElementById('cap_img').src = "/pic/cap";
+					document.getElementById('re_font').style.display = 'block';
+				}
+
+				function returnbook() {
+					fetch(window.location.pathname, {
+						method: 'DELETE'
+					})
+						.then(response => {
+							console.log(response);
+							if (response.ok) {
+								alert('提交成功。');
+								window.location.replace("/access/user/user_info_d3");
+
+							} else {
+								alert('请求失败。');
+								refresh_cap();
+							}
+						})
+						.catch(error => console.error('Error:', error))
+				}
+
+			</script>
+</body>
+</html>

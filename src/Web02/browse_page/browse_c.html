@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="/pic/ear_v3_icon">
+		<link rel="stylesheet" href="/style/browse_style2">
+		<title>浮声 {{ class_res }}分类结果</title>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<div class="bg_01">
+			<div class="bg_06">
+				<font size="7">
+					<B>书目索引</B>
+				</font><br><br>
+				<li><a id="c1", href="/access/browse_cmar_page_1">共产主义 ></a></li><br>
+				<li><a id="c2", href="/access/browse_cphi_page_1">哲学 ></a></li><br>
+				<li><a id="c3", href="/access/browse_csoc_page_1">社会科学 ></a></li><br>
+				<li><a id="c4", href="/access/browse_cnat_page_1">自然科学 ></a></li><br>
+				<li><a id="c5", href="/access/browse_ccom_page_1">综合性图书 ></a></li><br>
+				<li><a href="/access/browse_i1">书目主页 ></a></li><br>
+			</div>
+			<div class="bg_05"></div>
+			<img src="/pic/down_line", class="search_img">
+		</div>
+		<div class="bg_021">
+			<div class="bg_05"></div>
+				<div class="search_title">
+					<B><I>
+					<font size="6">{{ class_res }}</font>
+					</B></I>的相关结果：
+				</div>
+				<div class="bg_04">
+					{{ search_div_push }}
+					<br><br>
+					<page class="pagination">
+						<li><a id="tp1" >«</a></li>
+						<li><a id="p1" >1</a></li>
+						<li><a id="p2" >2</a></li>
+						<li><a id="p3" >3</a></li>
+						<li><a id="p4" >4</a></li>
+						<li><a id="p5" >5</a></li>
+						<li><a id="p6" >6</a></li>
+						<li><a id="p7" >7</a></li>
+						<li><a id="p8" >8</a></li>
+						<li><a id="p9" >9</a></li>
+						<li><a id="tp9" >»</a></li>
+					</page>
+				</div>
+				<div class="bg_05"></div>
+			</div>
+		<div id="upside_pc">
+			<div class="title">
+				<font size="7"><B><I>浮声三</B></I>
+				</font>
+				<font size="5"><B><I>智能化图书管理系统</B></I>
+				</font>
+			</div>
+			<a href="/access/user/user_info_d1">
+				<div id="img1"></div>
+			</a>
+		</div>
+		<div id="footer_pc">
+			Copyright © 2022-2026
+			<font style="font-family: 'a_AlgeriusCmFtz1', serif;">Двигатель Ржавчина</font>
+			&nbsp;
+			<strong>10.129.136.9</strong>
+			All Rights Reserved. 备案号：陕ICP备202412807号-1
+			<br>
+			Power By <B><I>Jessarin000</I></B>
+		</div>
+		<script>
+			
+			const search_div = document.querySelectorAll('div.search_div');
+			var limit = search_div.length;
+			for ( n = 0;n < limit;n+=2 ) {
+				var serh = search_div[n];
+				console.log('serh = ', serh);
+				serh.style.background = 'linear-gradient(to bottom, #87fffeff, #87fffeff, #7cc6c5ff)';
+			}
+			
+			const bg21_div = document.querySelectorAll('div.bg_021');
+			var bg21 = bg21_div[0];
+			bg21.style.height = 275 + limit * 27 + 'px';
+			bg21.style.background = 'linear-gradient(to right, #ffffffd7, white, white, white, white, #ffffffb8, #ffffffb8)';
+			
+			var tmp1 = window.location.pathname;
+			if (tmp1.match("_cmar") != null) {
+				document.getElementById("c1").className += " active";
+			}
+			else if (tmp1.match("_cphi") != null) {
+				document.getElementById("c2").className += " active";
+			}
+			else if (tmp1.match("_csoc") != null) {
+				document.getElementById("c3").className += " active";
+			}
+			else if (tmp1.match("_cnat") != null) {
+				document.getElementById("c4").className += " active";
+			}
+			else if (tmp1.match("_ccom") != null) {
+				document.getElementById("c5").className += " active";
+			}
+			
+			var page = tmp1.substr(tmp1.search("_page_")+6,1);
+			var len = tmp1.length;
+			var req_id = "p" + page;
+			console.log('req_id = ', req_id);
+			document.getElementById(req_id).className += " active";
+			for ( n = 1;n < 10;n++ ) {
+				var req_id = "p" + n;
+				document.getElementById(req_id).href = tmp1.substr(0, len-1) + n;
+			}
+			document.getElementById("tp1").href = tmp1.substr(0, len-1) + 1;
+			document.getElementById("tp9").href = tmp1.substr(0, len-1) + 9;
+		</script>
+	</body>
+</html>
