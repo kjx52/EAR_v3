@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="/pic/ear_v3_icon">
+		<link rel="stylesheet" href="/user/style/user_login_style">
+
+		<title>浮声 重置密码</title>
+		<script src="/user/js/md5_js"></script>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+		<script>
+			$(document).ready(function()
+			{
+				$("#duv").fadeIn();
+				$("#dcv").fadeIn();
+				$("#img1").fadeIn();
+				$("#img2").fadeIn();
+				$("#duv3").fadeIn();
+				$("#dcv3").fadeIn();
+				$("#img2").fadeOut(700);
+				$("#duv3").fadeOut(700);
+				$("#dcv3").fadeOut(700);
+				$("#duv").fadeOut(3200);
+				$("#dcv").fadeOut(3200);
+				$("#img1").fadeOut(5200);
+			});
+		</script>
+		<style>
+			#forget_passwd {
+				color: #fff;
+				font-weight: 600;
+				cursor: pointer;
+			}
+
+			.modal {
+				display: none;
+				position: fixed;
+				z-index: 1;
+				padding-top: 80px;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: rgb(0,0,0);
+				background-color: rgba(0,0,0,0.4);
+			}
+
+			.modal-content {
+				background-color: #fefefe;
+				margin: 5% auto;
+				padding: 20px 20px 10px 20px;
+				border: 1px solid #888;
+				width: 40%;
+			}
+
+			.form1 {
+				padding-left: 20px;
+			}
+
+				.form1 label {
+					font-size: 18px;
+					line-height: 32px;
+					font-weight: 600;
+				}
+
+			.close {
+				color: #aaa;
+				float: right;
+				font-size: 40px;
+				font-weight: bold;
+			}
+
+				.close:hover,
+				.close:focus {
+					color: black;
+					text-decoration: none;
+					cursor: pointer;
+				}
+
+			.submit {
+				width: 20%;
+				border: none;
+				outline: none;
+				background-color: #808080;
+				padding: 10px;
+				border-radius: 1px;
+				color: black;
+				font-size: 16px;
+				font-weight: 600;
+				transition: .3s ease;
+				margin-top: 5%;
+				line-height: 20px;
+			}
+
+				.submit:hover {
+					background-color: black;
+					color: azure;
+					cursor: pointer;
+				}
+
+			.btn3 {
+				text-align: right;
+			}
+
+			#click {
+				cursor: pointer;
+				border: 0;
+				background: lightgray;
+				font-weight: 600;
+				transition: 0.2s;
+				width: 150px;
+				font-size: 19px;
+				text-align: center;
+				text-decoration: none;
+				padding: 9px 9px;
+				color: black;
+			}
+
+				#click:hover {
+					background: black;
+					color: white;
+				}
+
+			#form2 {
+				margin: 20px 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<div class="color"></div>
+			<div class="color"></div>
+			<div class="color"></div>
+			<div id="duv2">
+				<img src="/user/pic/ear_logo1" alt="logo1" height=80% align="right">
+			</div>
+			<div id="dcv2">
+				<img src="/user/pic/ear_logo2" alt="logo2" height=80% align="left">
+			</div>
+			<div class="box">
+				<div class="container">
+					<div class="form">
+						<h2>重置密码</h2>
+						<form id="Form1" method="POST">
+							<div class="inputBox">
+								<input type="password" placeholder="新密码" id="password" name="password" required oninput="checkpassword()">
+							</div>
+							<div class="inputBox">
+								<input type="password" placeholder="确认密码" id="rep_passwd" name="password" required oninput="checkpassword()">
+							</div>
+							<p id="message"></p>
+							<div class="inputBox">
+								<input type="submit" value="提交">
+							</div>
+						</form>
+						<p class="forget">
+							没有账户?
+							<a href="/user/user_regist">注册</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id="duv">
+				<img id="img1" src="/user/pic/ear_logo1" alt="logo1" position=fixed display=none height=80% align="right">
+			</div>
+			<div id="dcv">
+				<img id="img1" src="/user/pic/ear_logo2" alt="logo2" position=fixed display=none height=80% align="left">
+			</div>
+		</section>
+
+		<div id="duv3">
+			<img id="img2" src="/user/pic/ear_logo_w1" alt="logo_w1" position=fixed display=none height=80% align="right">
+		</div>
+		<div id="dcv3">
+			<img id="img2" src="/user/pic/ear_logo_w2" alt="logo_w2" position=fixed display=none height=80% align="left">
+		</div>
+		<div id="footer_pc">
+			Copyright © 2022-2026
+			<font style="font-family: 'a_AlgeriusCmFtz1', serif;">Двигатель Ржавчина</font>
+			&nbsp;
+			<strong>10.129.136.9</strong>
+			All Rights Reserved. 备案号：陕ICP备202412807号-1
+			<br>
+			Power By <B><I>Jessarin000</I></B>
+		</div>
+
+		<div id="popup" class="popup">
+			<h2>警告</h2><br>
+			<p>网站超时。</p>
+			<button class="btn" onclick="hidePopup()"><B>关闭弹窗</B></button>
+		</div>
+
+		<div id="loader" class="loader">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<font size="3" color="white">&nbsp;&nbsp;正在链接服务器...</font>
+		</div>
+
+		<script>
+			function showPopup() {
+				document.getElementById('loader').style.display = 'flex';
+				vatmp1 = setTimeout(() => document.getElementById('loader').style.display = 'none', 8900);
+				vatmp2 = setTimeout(() => document.getElementById('popup').style.display = 'block', 9000);
+			}
+
+			function hidePopup() {
+				document.getElementById('popup').style.display = 'none';
+				location.reload();
+			}
+
+			function post_req(bodys) {
+                fetch(window.location.pathname,{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json;charset=utf-8;',
+						'Cache-Control': 'max-age=0',
+						'Upgrade-Insecure-Requests': '1'
+					},
+					body: bodys
+				})
+				.then(response => {
+					console.log(response);
+					if (response.ok) {
+						alert('操作成功。');
+                        window.location.replace("/user/user_login");
+					} else {
+                        document.getElementById('loader').style.display = 'none';
+                        clearTimeout(vatmp1);
+                        clearTimeout(vatmp2);
+						alert('操作失败。');
+					}
+				})
+				.catch(error => console.error('Error:', error))
+			}
+
+            function checkpassword() {
+                let rep_passwd = document.getElementById('rep_passwd');
+                let passwd = document.getElementById('password').value;
+
+                if (passwd != "" && passwd != rep_passwd.value) {
+                    let message = document.getElementById('message');
+                    message.textContent = '两次输入密码不相等。';
+                    message.style.color = 'red';
+                    rep_passwd.style.color = 'red';
+                } else {
+                    let message = document.getElementById('message');
+                    message.textContent = '';
+                    rep_passwd.style.color = 'black';
+                }
+            }
+
+			document.getElementById('Form1').onsubmit = function(event) {
+				event.preventDefault();
+				showPopup();
+				console.log('ok');
+
+                let passwd = md5(document.getElementById('password').value);
+				let rep_passwd = md5(document.getElementById('rep_passwd').value);
+				if (passwd != rep_passwd) {
+					alert('密码不匹配。');
+				} else {
+                    let bodys = JSON.stringify(
+                        {
+                            password: `${passwd}`,
+                        }
+                    );
+                    setTimeout(() => post_req(bodys), 3000);
+				}
+			}
+		</script>
+	</body>
+</html>
