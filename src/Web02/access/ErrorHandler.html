@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" href="/pic/ear_v3_icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>请求被驳回</title>
+	<style>
+		body {
+			position: relative;
+			--c: #09f;
+			background-color: #000;
+			background-image: radial-gradient(4px 100px at 0px 235px, var(--c), #0000), radial-gradient(4px 100px at 300px 235px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 117.5px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 252px, var(--c), #0000), radial-gradient(4px 100px at 300px 252px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 126px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 150px, var(--c), #0000), radial-gradient(4px 100px at 300px 150px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 75px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 253px, var(--c), #0000), radial-gradient(4px 100px at 300px 253px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 126.5px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 204px, var(--c), #0000), radial-gradient(4px 100px at 300px 204px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 102px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 134px, var(--c), #0000), radial-gradient(4px 100px at 300px 134px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 67px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 179px, var(--c), #0000), radial-gradient(4px 100px at 300px 179px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 89.5px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 299px, var(--c), #0000), radial-gradient(4px 100px at 300px 299px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 149.5px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 215px, var(--c), #0000), radial-gradient(4px 100px at 300px 215px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 107.5px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 281px, var(--c), #0000), radial-gradient(4px 100px at 300px 281px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 140.5px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 158px, var(--c), #0000), radial-gradient(4px 100px at 300px 158px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 79px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 210px, var(--c), #0000), radial-gradient(4px 100px at 300px 210px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 105px, var(--c) 100%, #0000 150%);
+			background-size: 300px 235px, 300px 235px, 300px 235px, 300px 252px, 300px 252px, 300px 252px, 300px 150px, 300px 150px, 300px 150px, 300px 253px, 300px 253px, 300px 253px, 300px 204px, 300px 204px, 300px 204px, 300px 134px, 300px 134px, 300px 134px, 300px 179px, 300px 179px, 300px 179px, 300px 299px, 300px 299px, 300px 299px, 300px 215px, 300px 215px, 300px 215px, 300px 281px, 300px 281px, 300px 281px, 300px 158px, 300px 158px, 300px 158px, 300px 210px, 300px 210px, 300px 210px;
+			animation: hi 150s linear infinite;
+		}
+
+		@keyframes hi {
+			0% {
+				background-position: 0px 220px, 3px 220px, 151.5px 337.5px, 25px 24px, 28px 24px, 176.5px 150px, 50px 16px, 53px 16px, 201.5px 91px, 75px 224px, 78px 224px, 226.5px 350.5px, 100px 19px, 103px 19px, 251.5px 121px, 125px 120px, 128px 120px, 276.5px 187px, 150px 31px, 153px 31px, 301.5px 120.5px, 175px 235px, 178px 235px, 326.5px 384.5px, 200px 121px, 203px 121px, 351.5px 228.5px, 225px 224px, 228px 224px, 376.5px 364.5px, 250px 26px, 253px 26px, 401.5px 105px, 275px 75px, 278px 75px, 426.5px 180px;
+			}
+
+			to {
+				background-position: 0px 6800px, 3px 6800px, 151.5px 6917.5px, 25px 13632px, 28px 13632px, 176.5px 13758px, 50px 5416px, 53px 5416px, 201.5px 5491px, 75px 17175px, 78px 17175px, 226.5px 17301.5px, 100px 5119px, 103px 5119px, 251.5px 5221px, 125px 8428px, 128px 8428px, 276.5px 8495px, 150px 9876px, 153px 9876px, 301.5px 9965.5px, 175px 13391px, 178px 13391px, 326.5px 13540.5px, 200px 14741px, 203px 14741px, 351.5px 14848.5px, 225px 18770px, 228px 18770px, 376.5px 18910.5px, 250px 5082px, 253px 5082px, 401.5px 5161px, 275px 6375px, 278px 6375px, 426.5px 6480px;
+			}
+		}
+
+		.container {
+			cursor: pointer;
+		}
+
+			.container input {
+				display: none;
+			}
+
+			.container svg {
+				height: 5em;
+				transition: all 600ms;
+			}
+
+		.line {
+			fill: none;
+			stroke: white;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke-width: 3;
+			transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		.line-top-bottom {
+			stroke-dasharray: 12 63;
+		}
+
+		.container input:checked + svg {
+			transform: rotate(-45deg);
+		}
+
+			.container input:checked + svg .line-top-bottom {
+				stroke-dasharray: 20 300;
+				stroke-dashoffset: -32.42;
+			}
+
+		.checkmot {
+			background: black;
+			height: 5em;
+			width: 5em;
+			border-radius: 50px;
+			transition: all 700ms;
+			--spread: 40px;
+		}
+
+		.container input:checked ~ .checkmot {
+			background: black;
+			box-shadow: -20px -20px var(--spread) 0px #5B51D8, 0 -20px var(--spread) 0px #833AB4, 20px -20px var(--spread) 0px #E1306C, 20px 0 var(--spread) 0px #FD1D1D, 20px 20px var(--spread) 0px #F77737, 0 20px var(--spread) 0px #FCAF45, -20px 20px var(--spread) 0px #FFDC80;
+		}
+
+		.checkmot:after {
+			content: "";
+			position: absolute;
+			display: none;
+		}
+
+		.container input:checked ~ .checkmot:after {
+			display: block;
+		}
+
+		.container .checkmot:after {
+			left: 0.45em;
+			top: 0.25em;
+			width: 0.25em;
+			height: 0.5em;
+			border: solid #f0f0f0;
+			border-width: 0 0.15em 0.15em 0;
+			transform: rotate(45deg);
+		}
+
+		.leftcolumn2 {
+			float: left;
+			width: 90%;
+			margin-top: 20px;
+			border-left: 12px double black;
+		}
+
+		.card2_l {
+			padding: 20px 50px;
+			margin: 150px 240px;
+		}
+
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		#font1 {
+			font-size: 4em;
+			color: aliceblue;
+			position: relative;
+			top: -88px;
+			left: 115px;
+			opacity: 1;
+		}
+
+		.font2 {
+			font-size: 20px;
+			color: lightgray;
+			padding: 0 50px;
+		}
+
+		.font3 {
+			font-size: 25px;
+			color: aliceblue;
+			padding: 0 20px;
+		}
+		
+		iframe {
+			position: fixed;
+			bottom: 10px;
+			right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="row">
+		<div class="leftcolumn2">
+			<div class="card2_l">
+				<label class="container">
+					<input id="input1" checked="checked" type="checkbox" onchange="func1()">
+					<svg class="checkmot" viewBox="0 0 32 32">
+						<path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+						<path class="line" d="M7 16 27 16"></path>
+					</svg>
+				</label>
+				<div id="font1">服务器错误响应</div>
+				<div class="font2">
+					{{ error_detial }}<br>
+					<div id="current-time">正在核对请求时间...</div>
+				</div>
+				<br><br><br>
+				<div class="font3">
+					若服务器标准界面出现错误响应，请联系管理员。
+				</div>
+			</div>
+		</div>
+	</div>
+	<iframe frameborder="0" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1365032960&auto=1&height=66"></iframe>
+	<script src="https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js"></script>
+	<script>
+		let formattedDateTime=moment().format('YYYY-MM-DD HH:mm:ss');
+		document.getElementById('current-time').innerText = "请求时间为：" + formattedDateTime;
+
+		function func1() {
+            let input_tmp = document.getElementById("font1");
+			if (document.getElementById('input1').checked) {
+				input_tmp.style.opacity = "0.85";
+				setTimeout(() => input_tmp.style.opacity = "0.7", 50);
+				setTimeout(() => input_tmp.style.opacity = "0.55", 100);
+                setTimeout(() => input_tmp.style.opacity = "0.4", 150);
+				setTimeout(() => input_tmp.style.opacity = "0.25", 200);
+				setTimeout(() => input_tmp.style.opacity = "0", 250);
+				setTimeout(() => input_tmp.innerHTML = "服务器错误响应", 300);
+                setTimeout(() => input_tmp.style.opacity = "0.15", 350);
+				setTimeout(() => input_tmp.style.opacity = "0.3", 400);
+                setTimeout(() => input_tmp.style.opacity = "0.45", 450);
+				setTimeout(() => input_tmp.style.opacity = "0.6", 500);
+                setTimeout(() => input_tmp.style.opacity = "0.75", 550);
+				setTimeout(() => input_tmp.style.opacity = "1", 590);
+
+			} else {
+                input_tmp.style.opacity = "0.85";
+                setTimeout(() => input_tmp.style.opacity = "0.7", 50);
+                setTimeout(() => input_tmp.style.opacity = "0.55", 100);
+                setTimeout(() => input_tmp.style.opacity = "0.4", 150);
+                setTimeout(() => input_tmp.style.opacity = "0.25", 200);
+                setTimeout(() => input_tmp.style.opacity = "0", 250);
+				setTimeout(() => input_tmp.innerHTML = "EAR 浮声三 2.1.2", 300);
+                setTimeout(() => input_tmp.style.opacity = "0.15", 350);
+                setTimeout(() => input_tmp.style.opacity = "0.3", 400);
+                setTimeout(() => input_tmp.style.opacity = "0.45", 450);
+                setTimeout(() => input_tmp.style.opacity = "0.6", 500);
+                setTimeout(() => input_tmp.style.opacity = "0.75", 550);
+                setTimeout(() => input_tmp.style.opacity = "1", 590);
+			}
+		}
+	</script>
+</body>
+</html>

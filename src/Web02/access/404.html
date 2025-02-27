@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="/pic/ear_v3_icon">
+		<title>404 Not Found</title>
+		<style>
+			body {
+				background: #c7b29e;
+			}
+			
+			.shell_div {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(to top, #0004, #fff0, #fff0, #fff0);
+			}
+			
+			.div1 {
+				width: 80%;
+				text-align: center;
+				margin: 4.5% auto;
+			}
+			
+			.font1 {
+				font-size: 3em;
+				color: #63594f;
+			}
+			
+			#current-time {
+				color: #63594f;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div1">
+			<img id="img0" src="/pic/404" alt="logo" width=400px>
+			<br><br>
+			<div class="font1">请求的资源不存在</div>
+			<hr color="#63594f" />
+			<div id="current-time">正在核对请求时间...</div>
+		</div>
+		
+		<div class="shell_div"></div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js"></script>
+		<script>
+		let formattedDateTime=moment().format('YYYY-MM-DD HH:mm:ss');
+		document.getElementById('current-time').innerText = formattedDateTime;
+		</script>
+	</body>
+</html>
