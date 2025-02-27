@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/pic/main_bg1');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+#img0 {
+    border-radius: 50%;
+    border: 5px solid gray;
+}
+
+#upside_pc {
+    height: 100px;
+    position: static;
+    background: #0d002f4f;
+    top: 0;
+    width: 100%;
+    text-align: right;
+}
+
+#img1 {
+    background-image: url('/pic/user');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    border-radius: 50%;
+    border: 3px solid black;
+}
+
+#line {
+    height: 4px;
+    width: 30%;
+    left: 35%;
+    background: black;
+    position: absolute;
+    bottom: 240px;
+    border-radius: 40%;
+    margin: auto;
+}
+
+#block {
+    opacity: 0.3;
+}
+
+#header_pc {
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    color: #0006b8;
+    font-size: 56px;
+    font-family: 'Ogilvie Cyr', serif;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+#title_pc {
+    height: 180px;
+    line-height: 50px;
+    text-align: center;
+    font-family: Arial;
+    letter-spacing: 1px;
+}
+
+#font1 {
+    font-size: 50px;
+}
+
+#font2 {
+    font-size: 40px;
+}
+
+#footer_pc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 80px;
+    line-height: 40px;
+    width: 100%;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    font-family: Arial;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.bg_02 {
+    position: absolute;
+    height: 100%;
+}
+
+    .bg_02:nth-child(1) {
+        width: 70%;
+        left: 15%;
+        background: #ffffffa2;
+    }
+
+    .bg_02:nth-child(2) {
+        width: 65%;
+        left: 17.5%;
+        background: #80808024;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+.button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "AaJiJiaHei";
+    margin: -2px -3px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    height: 80px;
+    width: 80px;
+    background-color: #fff0;
+    border-radius: 50%;
+    color: #fff0;
+}
+
+    .button1:hover {
+        background-color: #030034;
+        color: white;
+    }
