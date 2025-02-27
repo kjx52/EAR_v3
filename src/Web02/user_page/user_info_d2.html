@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="/pic/ear_v3_icon">
+		<link rel="stylesheet" href="/user/style/user_info">
+		<title>浮声 {{ user_name }}的个人主页</title>
+		<style>
+			html, body {
+				font-family: Arial;
+				padding: 0.50px;
+				background: url('/user/pic/bg01');
+				background-attachment: fixed;
+				background-size: 100%;
+				scrollbar-width: thin;
+				scrollbar-color: white black;
+			}
+
+			iframe {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+
+			.modal {
+				display: none;
+				position: fixed;
+				z-index: 1;
+				padding-top: 80px;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: rgb(0,0,0);
+				background-color: rgba(0,0,0,0.4);
+			}
+
+            .modal-content {
+                background-color: #fefefe;
+                margin: 5% auto;
+                padding: 20px 20px 10px 20px;
+                border: 1px solid #888;
+                width: 40%;
+            }
+
+            .form1 {
+                padding-left: 20px;
+            }
+
+                .form1 label {
+                    font-size: 18px;
+                    line-height: 32px;
+                    font-weight: 600;
+                }
+
+			.close {
+				color: #aaa;
+				float: right;
+				font-size: 40px;
+				font-weight: bold;
+			}
+
+				.close:hover,
+				.close:focus {
+					color: black;
+					text-decoration: none;
+					cursor: pointer;
+				}
+
+            .submit {
+                width: 20%;
+                border: none;
+                outline: none;
+                background-color: #808080;
+                padding: 10px;
+                border-radius: 1px;
+                color: black;
+                font-size: 16px;
+                font-weight: 600;
+                transition: .3s ease;
+                margin-top: 5%;
+				line-height: 20px;
+            }
+
+                .submit:hover {
+                    background-color: black;
+					color: azure;
+                    cursor: pointer;
+                }
+
+            .btn3 {
+                text-align: right;
+            }
+
+            #click {
+                cursor: pointer;
+                border: 0;
+                background: lightgray;
+                font-weight: 600;
+                transition: 0.2s;
+                width: 150px;
+                font-size: 19px;
+                text-align: center;
+                text-decoration: none;
+                padding: 9px 9px;
+                color: black;
+            }
+
+                #click:hover {
+                    background: black;
+                    color: white;
+                }
+
+            #form2 {
+				margin: 20px 20px;
+            }
+		</style>
+	</head>
+	<body>
+		A
+		<div class="header" id="header">
+			<h1>幸会，{{ user_name }}</h1>
+			<p>User_Id: {{ user_id }}</p>
+		</div>
+
+		<div class="topnav">
+			<a href="/access/user/user_info_d1">全站公告</a>
+			<a href="#">个人信息</a>
+			<a href="/access/user/user_info_d3">已借阅图书</a>
+			<a href="/access/browse_i1" style="float:right">网站主页</a>
+		</div>
+
+		<div class="row">
+			<div class="leftcolumn2">
+				<div class="card2_l">
+					<h2>{{ user_name }}</h2>
+					<p>User_Id: {{ user_id }}</p>
+					<div style="padding: 0 20px;">
+						<p>
+							注册时间：{{ set_time }}<br>
+							邮箱：{{ e_mail }}
+						</p>
+					</div>
+					<div id="click" onclick="showform()">
+						修改个人信息
+					</div>
+				</div>
+			</div>
+			<div class="rightcolumn2"></div>
+		</div>
+
+		<div id="upside_pc">
+			<div id="img1">
+				<button class="button button1" onclick="showalert()">退出登录</button>
+			</div>
+		</div>
+		<div class="footer">
+			Copyright © 2022-2026
+			<font style="font-family: 'a_AlgeriusCmFtz1', serif;">Двигатель Ржавчина</font>
+			&nbsp;
+			<strong>10.129.136.9</strong>
+			All Rights Reserved. 备案号：陕ICP备202412807号-1
+			<br>
+			Power By <B><I>Jessarin000</I></B>
+		</div>
+
+		<div id="popup" class="popup">
+			<h2>您即将退出登录</h2>
+			<p>您确定吗？</p>
+
+			<button class="btn1" onclick="hidealert()"><B>取消</B></button>
+			<button class="btn2" onclick="found()"><B>确定</B></button>
+		</div>
+
+		<div id="form1" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="hideform()">&times;</span>
+				<div class="form1">
+					<h2>更新你的个人信息</h2>
+					无需更改的部分可留空
+					<form id="form2">
+						<label>
+							姓名：
+							<input id="name" type="text" placeholder="" pattern="[A-Za-z0-9]+">
+						</label>
+						<br>
+						<label>
+							密码：
+							<input id="passwd" type="password" placeholder="" />
+						</label>
+						<br>
+						<label>
+							邮箱：
+							<input id="email" type="email" placeholder="" />
+						</label>
+						<div class="btn3">
+							<button class="submit">提交</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- 丹麦解放之歌 -->
+		<iframe frameborder="0" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=2664211745&auto=1&height=66"></iframe>
+
+		<script src="/user/js/md5_js"></script>
+		<script>
+			window.onscroll = function () { scrollFunction() };
+
+			function scrollFunction() {
+				if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+					document.getElementById("header").style.padding = "30px";
+					document.getElementById("header").style.background = "#ffffff74";
+				} else {
+					document.getElementById("header").style.padding = "80px";
+				}
+			}
+
+			function showalert() {
+				setTimeout(() => document.getElementById('popup').style.display = 'block', 100);
+			}
+
+			function hidealert() {
+				document.getElementById('popup').style.display = 'none';
+			}
+
+			function found() {
+				window.location.replace("/access/user/user_logout");
+			}
+
+			const form1 = document.getElementById('form1');
+			function showform() {
+				form1.style.display = "block";
+			}
+
+			function hideform() {
+				form1.style.display = "none";
+			}
+
+			window.onclick = function (event) {
+				if (event.target == form1) {
+					form1.style.display = "none";
+				}
+			}
+
+			const form2 = document.getElementById("form2");
+			form2.addEventListener("submit", () => {
+				event.preventDefault();
+				console.log("submit");
+				let name = document.getElementById('name').value;
+                let passwd = md5(document.getElementById('passwd').value);
+                let email = document.getElementById('email').value;
+				console.log(name);
+				console.log(email);
+				console.log(passwd);
+                fetch("/access/user/user_update", {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json;charset=utf-8;',
+						'Cache-Control': 'max-age=0',
+						'Upgrade-Insecure-Requests': '1'
+					},
+					body: JSON.stringify(
+						{
+							username: `${name}`,
+							password: `${passwd}`,
+							email: `${email}`,
+						}
+					)
+				})
+				.then(response => {
+					console.log(response);
+                    if (response.ok) {
+                        alert('请求成功。');
+                        window.location.replace('/user/option_note');
+                    } else {
+                        alert('请求失败。');
+                    }
+				})
+				.catch(error => console.error('Error:', error))
+			});
+		</script>
+
+	</body>
+</html>
+

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="/pic/ear_v3_icon">
+		<link rel="stylesheet" href="/user/style/user_info">
+		<title>浮声 {{ user_name }}的个人主页</title>
+		<style>
+			html, body {
+				font-family: Arial;
+				padding: 0.50px;
+				background: url('/user/pic/bg02');
+				background-attachment: fixed;
+				background-size: 100%;
+				scrollbar-width: thin;
+				scrollbar-color: white black;
+			}
+
+            iframe {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+		</style>
+	</head>
+	<body>
+		A
+		<div class="header" id="header">
+			<h1>欢迎，{{ user_name }}</h1>
+			<p>User_Id: {{ user_id }}</p>
+		</div>
+
+		<div class="topnav">
+			<a href="#">全站公告</a>
+			<a href="/access/user/user_info_d2">个人信息</a>
+			<a href="/access/user/user_info_d3">已借阅图书</a>
+			<a href="/access/browse_i1" style="float:right">网站主页</a>
+		</div>
+
+		<div class="row">
+			<div class="leftcolumn">
+				<div class="card">
+					<h2>第二次公测</h2>
+					<h5>关于网站安全和网站功能的测试，2025 年 2 月 24 日</h5>
+					<img class="img" src="/user/pic/img2" alt="img2">
+					<p>第二次公测面向公司全体员工，主要测试网站安全性能、对突发状况的处理能力和其他功能。</p>
+					<p>
+						届时，工作人员可通过公司网络访问本网址对本站进行访问，访问凭证已发至各位邮箱。<br>
+						网站开放时间为 2 月 24 日 至  3 月 14 日。<br>
+						如遇到错误或有任何意见或建议，请联系开发者。感谢参与测试！
+					</p>
+				</div>
+				<div class="card">
+					<h2>第一次公测</h2>
+					<h5>关于网站路由和请求处理的测试，2024 年 11 月 17 日</h5>
+					<img class="img" src="/user/pic/img1" alt="img1">
+					<p>第一次公测面向研发部和管理部，主要测试网站链接重定向的位置和对用户请求的处理能力。</p>
+					<p>
+						届时，工作人员可通过公司网络访问本网址对本站进行访问，访问凭证已发至各位邮箱。<br>
+						网站开放时间为 11月17日 至 11月22日。<br>
+						如遇到错误或有任何意见或建议，请联系开发者。感谢参与测试！
+					</p>
+				</div>
+			</div>
+			<div class="rightcolumn">
+				<div class="card">
+					<h2>关于作者</h2>
+					<img class="img" src="/user/pic/author" alt="我">
+					<p>
+						开发者信息
+					</p>
+				</div>
+				<div class="card">
+					<h3>手记</h3>
+					<a href="" target="_blank"><div class="post1"><p>一些链接</p></div></a>
+					<a href="" target="_blank"><div class="post2"><p>一些链接</p></div></a>
+					<a href="" target="_blank"><div class="post3"><p>一些链接</p></div></a>
+				</div>
+				<div class="card">
+					<h3>联系方式</h3>
+					<p>联系方式</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="upside_pc">
+			<a href="#" onclick="showalert()">
+				<div id="img1">
+					<button class="button button1">退出登录</button>
+				</div>
+			</a>
+		</div>
+		<div class="footer">
+			Copyright © 2022-2026
+			<font style="font-family: 'a_AlgeriusCmFtz1', serif;">Двигатель Ржавчина</font>
+			&nbsp;
+			<strong>10.129.136.9</strong>
+			All Rights Reserved. 备案号：陕ICP备202412807号-1
+			<br>
+			Power By <B><I>Jessarin000</I></B>
+		</div>
+
+		<div id="popup" class="popup">
+			<h2>您即将退出登录</h2>
+			<p>您确定吗？</p>
+
+			<button class="btn1" onclick="hidealert()"><B>取消</B></button>
+			<button class="btn2" onclick="found()"><B>确定</B></button>
+		</div>
+
+		<!-- 武汉会战 -->
+		<iframe frameborder="0" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1365036047&auto=1&height=66"></iframe>
+
+		<script>
+			window.onscroll = function () { scrollFunction() };
+
+			function scrollFunction() {
+				if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+					document.getElementById("header").style.padding = "30px";
+					document.getElementById("header").style.background = "#ffffff74";
+				} else {
+					document.getElementById("header").style.padding = "80px";
+				}
+			}
+
+			function showalert() {
+				setTimeout(() => document.getElementById('popup').style.display = 'block', 100);
+			}
+
+			function hidealert() {
+				document.getElementById('popup').style.display = 'none';
+			}
+
+			function found() {
+				window.location.replace("/access/user/user_logout");
+			}
+		</script>
+
+	</body>
+</html>
+

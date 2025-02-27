@@ -1,0 +1,363 @@
+* {
+	box-sizing: border-box;
+}
+
+#upside_pc {
+	height: 100px;
+	background: #0d002f4f;
+	width: 100%;
+	text-align: right;
+}
+
+#img1 {
+	background-image: url('/pic/user');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height: 80px;
+	width: 80px;
+	position: absolute;
+	right: 20px;
+	top: 38px;
+	border-radius: 50%;
+	border: 3px solid black;
+}
+
+.book_div {
+	float: left;
+	width: 40%;
+	margin: 30px 3%;
+	background: linear-gradient(to bottom, #00a00d, #fff0, #fff0);
+	text-align: center;
+}
+
+.img2 {
+	width: 80%;
+	border-radius: 3%;
+	border: 3px solid black;
+	box-shadow: 10px 5px 5px black;
+}
+
+.book_name {
+	width: 100%;
+	border-radius: 5%;
+	text-align: center;
+	color: ghostwhite;
+	background: linear-gradient(to bottom, #fff0, #000);
+}
+
+.checked_div {
+	width: 80%;
+	border-radius: 1%;
+	margin: 10px 30px;
+	background: white;
+	border: 5px solid black;
+	text-align: center;
+	line-height: 32px;
+}
+
+.search_div {
+	width: 90%;
+	height: 40px;
+	text-align: left;
+	padding: 4px 20px;
+	display: inline-block;
+	color: black;
+	border-radius: 1%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+	.search_div:hover {
+		background-color: #ddd;
+		color: black;
+	}
+
+.header {
+	padding: 260px;
+	transition: 0.4s;
+	text-align: center;
+	text-shadow: 0.5px 0.5px #fff, -0.5px -0.5px #fff, -0.5px 0.5px #fff, 0.5px -0.5px #fff;
+}
+
+	.header h1 {
+		font-size: 50px;
+	}
+
+.topnav {
+	padding: 10px;
+	position: sticky;
+	position: -webkit-sticky;
+	top: -1px;
+	overflow: hidden;
+	background: linear-gradient(to bottom, black, #333, #333, black);
+}
+
+	.topnav a {
+		float: left;
+		display: block;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+		.topnav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+
+.leftcolumn {
+	float: left;
+	width: 75%;
+}
+
+.leftcolumn2 {
+	float: left;
+	width: 70%;
+	margin-top: 20px;
+	height: 850px;
+	background: linear-gradient(to right, #ffffff74, #ffffff74, #fff0);
+	border-left: 12px double black;
+}
+
+.leftcolumn3 {
+	float: left;
+	width: 60%;
+	border-right: 12px double black;
+	padding-left: 20px;
+	padding-right: 20px;
+	background: linear-gradient(to right, #ffffff74, #fff0, #fff0, #fff0, #fff0, #fff0, #fff0, #ffffff74);
+}
+
+	.leftcolumn3 h2 {
+		padding-left: 20px;
+	}
+
+.rightcolumn {
+	float: left;
+	width: 25%;
+	padding-left: 20px;
+}
+
+.rightcolumn2 {
+	float: left;
+	width: 30%;
+	height: 850px;
+	padding-left: 20px;
+	margin-top: 20px;
+	background: url('/user/pic/userpl');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.rightcolumn3 {
+	float: left;
+	width: 35%;
+	padding-left: 20px;
+	background: linear-gradient(to right, #ffffff74, #fff0, #fff0, #fff0, #fff0, #fff0);
+}
+
+.fakeimg {
+	background-color: #aaa;
+	width: 100%;
+	padding: 20px;
+}
+
+.img {
+	width: 100%;
+	border: 3px solid black;
+	box-shadow: 10px 5px 5px black;
+}
+
+
+.post1 {
+	width: 100%;
+	text-align: center;
+	padding: 20px;
+	height: 110px;
+	background: url('/user/pic/ryb');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	color: white;
+	font-weight: 600;
+	display: inline-block;
+}
+
+	.post1:hover {
+		background: #ff0000;
+		transition: 0.5s;
+	}
+
+.post2 {
+	width: 100%;
+	text-align: center;
+	padding: 30px;
+	height: 110px;
+	background: url('/user/pic/sshw');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	color: white;
+	font-weight: 600;
+	display: inline-block;
+}
+
+	.post2:hover {
+		background: black;
+		transition: 0.5s;
+	}
+
+.post3 {
+	width: 100%;
+	text-align: center;
+	padding: 30px;
+	height: 110px;
+	background: url('/user/pic/ssh');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	color: white;
+	font-weight: 600;
+	display: inline-block;
+}
+
+	.post3:hover {
+		background: #000b47;
+		transition: 0.5s;
+	}
+
+.card {
+	background: #ffffff74;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+.card2_l {
+	background: linear-gradient(to right, #ffffff74, #fff0);
+	padding: 20px 50px;
+	margin: 220px 160px;
+	font-family: 'SJxinweibeijian', serif;
+}
+
+	.card2_l:first-child {
+		text-align: left;
+		font-size: 24px;
+		line-height: 32px;
+		color: #333;
+	}
+
+		.card2_l:first-child::first-line {
+			padding: 20px 40px;
+			text-shadow: 1px 1px #00189c;
+			font-size: 40px;
+			line-height: 45px;
+		}
+
+		.card2_l:first-child::first-letter {
+			text-shadow: 1px 1px #00116d, -1px -1px #00116d, -1px 1px #00116d, 1px -1px #00116d;
+			color: black;
+			font-size: 60px;
+			float: left;
+		}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.footer {
+	padding: 20px;
+	text-align: center;
+	background: linear-gradient(to bottom, #333, black, black);
+	color: white;
+	margin-top: 20px;
+	line-height: 40px;
+	font-family: Arial;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+
+@media screen and (max-width: 800px) {
+	.leftcolumn, .rightcolumn {
+		width: 100%;
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.topnav a {
+		float: none;
+		width: 100%;
+	}
+}
+
+.button {
+	border: none;
+	color: white;
+	padding: 10px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	font-family: "AaJiJiaHei";
+	margin: -2px -3px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.button1 {
+	height: 80px;
+	width: 80px;
+	background-color: #fff0;
+	border-radius: 50%;
+	color: #fff0;
+}
+
+	.button1:hover {
+		background-color: #030034;
+		color: white;
+	}
+
+.popup {
+	display: none;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	height: 200px;
+	background-color: #fff;
+	border: 3px solid #ccc;
+	padding: 20px;
+	z-index: 9999;
+}
+
+	.popup .btn1 {
+		background-color: #fff0;
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		padding: 10px 20px;
+		text-align: center;
+		color: black;
+	}
+
+		.popup .btn1:hover {
+			background-color: black;
+			color: white;
+		}
+
+	.popup .btn2 {
+		background-color: #fff0;
+		position: absolute;
+		right: 90px;
+		bottom: 10px;
+		padding: 10px 20px;
+		text-align: center;
+		color: black;
+	}
+
+		.popup .btn2:hover {
+			background-color: black;
+			color: white;
+		}

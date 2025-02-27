@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="/pic/ear_v3_icon">
+		<link rel="stylesheet" href="/user/style/user_info">
+		<title>浮声 {{ user_name }}的个人主页</title>
+		<style>
+			html, body {
+				font-family: Arial;
+				padding: 0.50px;
+				background: url('/user/pic/bg03');
+				background-attachment: fixed;
+				background-size: 100%;
+				scrollbar-width: thin;
+				scrollbar-color: white black;
+			}
+
+            iframe {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+		</style>
+	</head>
+	<body>
+		A
+		<div class="header" id="header">
+			<h1>贵安，{{ user_name }}</h1>
+			<p>已借阅 {{ book_num }} 本书</p>
+		</div>
+
+		<div class="topnav">
+			<a href="/access/user/user_info_d1">全站公告</a>
+			<a href="/access/user/user_info_d2">个人信息</a>
+			<a href="#">已借阅图书</a>
+			<a href="/access/browse_i1" style="float:right">网站主页</a>
+		</div>
+
+		<div class="row">
+			<div class="leftcolumn3">
+				<h2>借阅记录：</h2>
+				<hr>
+				{{ borrowed_div }}
+			</div>
+			<div class="rightcolumn3">
+				<h2>浏览记录：</h2>
+				<hr>
+				<div class="checked_div">
+					{{ checked_div }}
+				</div>
+			</div>
+		</div>
+
+		<div id="upside_pc">
+			<a href="#" onclick="showalert()">
+				<div id="img1">
+					<button class="button button1">退出登录</button>
+				</div>
+			</a>
+		</div>
+		<div class="footer">
+			Copyright © 2022-2026
+			<font style="font-family: 'a_AlgeriusCmFtz1', serif;">Двигатель Ржавчина</font>
+			&nbsp;
+			<strong>10.129.136.9</strong>
+			All Rights Reserved. 备案号：陕ICP备202412807号-1
+			<br>
+			Power By <B><I>Jessarin000</I></B>
+		</div>
+
+		<div id="popup" class="popup">
+			<h2>您即将退出登录</h2>
+			<p>您确定吗？</p>
+
+			<button class="btn1" onclick="hidealert()"><B>取消</B></button>
+			<button class="btn2" onclick="found()"><B>确定</B></button>
+		</div>
+
+		<!-- 蒙哥马利进行曲 -->
+		<iframe frameborder="0" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=35497545&auto=1&height=66"></iframe>
+
+		<script>
+			window.onscroll = function () { scrollFunction() };
+
+			function scrollFunction() {
+				if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+					document.getElementById("header").style.padding = "30px";
+					document.getElementById("header").style.background = "#ffffff74";
+				} else {
+					document.getElementById("header").style.padding = "80px";
+				}
+			}
+
+			function showalert() {
+				setTimeout(() => document.getElementById('popup').style.display = 'block', 100);
+			}
+
+			function hidealert() {
+				document.getElementById('popup').style.display = 'none';
+			}
+
+			function found() {
+				window.location.replace("/access/user/user_logout");
+			}
+		</script>
+
+	</body>
+</html>
+
