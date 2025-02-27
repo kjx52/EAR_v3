@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>浮声 注册确认邮件</title>
+		<style>
+			.img_div {
+				width: 100%;
+				padding: 20px 0;
+				text-align: center;
+			}
+
+			.body_div {
+				padding: 10px 20px;
+			}
+
+			.head {
+				background: linear-gradient(to left, #0004, #fff0);
+				font-size: 35px;
+				font-weight: 100;
+				padding: 5px 20px;
+			}
+
+			.head2 {
+				font-size: 20px;
+				font-weight: 100;
+				color: dimgray;
+				padding: 5px 20px;
+			}
+
+			.img1 {
+				width: 40%;
+				max-width: 290px;
+			}
+
+			.message_body {
+				font-size: 15px;
+				padding: 0 20px;
+			}
+
+            #click {
+                cursor: pointer;
+                border: 0;
+                background: lightgray;
+				font-weight: 600;
+                transition: 0.2s;
+                width: 150px;
+                font-size: 17px;
+                text-align: center;
+                text-decoration: none;
+                padding: 10px 10px;
+				color: black;
+            }
+
+				#click:hover {
+					background: black;
+					color: white;
+				}
+
+			#current-time {
+				font-size: 20px;
+				color: lightgray;
+				padding: 0 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="img_div">
+			<img class="img1" src="你的服务器网址/pic/ear.png">
+		</div>
+		<div class="body_div">
+			<div class="head2">
+				浮声三 账户管理
+			</div>
+			<div class="head">
+				{{ div1 }}邮件
+			</div>
+			<div id="current-time">正在核对请求时间...</div>
+			<div class="message_body">
+				<p>
+					我们收到了一个关联该邮箱的{{ div2 }}请求。<br>
+					如果你本人确实发送了该请求，则点击下方按钮进行最后一步{{ div3 }}。
+					<br><br>
+					该操作 5 分钟内有效
+					<br>
+					<div>
+						<a href="{{ account_confirmation }}" id="click">
+							点击此处{{ div4 }}
+						</a>
+					</div>
+					<br>
+					如果你并不知悉是次账户活动，建议你检查邮箱以确认是否存在隐私泄露。
+					<br><br>
+					本邮件由系统自动发送，请勿回复。<br>
+					若邮件显示异常请使用其他邮箱（如：QQ邮箱）打开。
+					<br><br>
+					有任何问题、意见或建议请联系管理员。
+				</p>
+				<br><br><br>
+				<p>
+					Cheers.<br>
+					浮声三 管理员
+				</p>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js"></script>
+		<script>
+			let formattedDateTime=moment().format('YYYY-MM-DD HH:mm:ss');
+			document.getElementById('current-time').innerText = "北京时间：" + formattedDateTime;
+		</script>
+	</body>
+</html>
