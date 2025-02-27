@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="/pic/ear_v3_icon">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+		<title>请求成功</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				--s: 60px;
+				--c1: #180a22;
+				--c2: #7e00b5;
+				--_g: radial-gradient( 25% 25% at 25% 25%, var(--c1) 99%, rgba(0, 0, 0, 0) 101% );
+				background: var(--_g) var(--s) var(--s) / calc(2 * var(--s)) calc(2 * var(--s)), var(--_g) 0 0 / calc(2 * var(--s)) calc(2 * var(--s)), radial-gradient(50% 50%, var(--c2) 98%, rgba(0, 0, 0, 0)) 0 0 / var(--s) var(--s), repeating-conic-gradient(var(--c2) 0 50%, var(--c1) 0 100%) calc(0.5 * var(--s)) 0 / calc(2 * var(--s)) var(--s);
+			}
+
+			.div1_1 {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: #000000a7;
+				padding: 0 0 0 50%;
+				clip-path: polygon(60% 0, 100% 0, 100% 100%, 39% 100%);
+				transition-duration: 0.5s;
+			}
+
+				.div1_1:hover {
+					clip-path: polygon(61% 0, 100% 0, 100% 100%, 40% 100%);
+				}
+
+            .div1_2 {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('/user/pic/bg04');
+                background-attachment: fixed;
+                background-position: right top;
+                background-size: 50% auto;
+                padding: 0 0 0 50%;
+                clip-path: polygon(68% 0, 100% 0, 100% 100%, 47% 100%);
+                transition-duration: 0.5s;
+            }
+
+				.div1_2:hover {
+					background-position: right 9% top;
+					clip-path: polygon(61% 0, 100% 0, 100% 100%, 40% 100%);
+				}
+
+			.div2_1 {
+				width: 60%;
+				padding: 10% 10%;
+				color: azure;
+				font-size: 100px;
+				font-weight: 100;
+				font-family: "ZCOOL XiaoWei", serif;
+			}
+
+			.div2_2 {
+				font-size: 70px;
+				font-weight: 300;
+			}
+
+			.div2_3 {
+				color: azure;
+				font-size: 30px;
+				font-weight: 400;
+				font-family: "ZCOOL XiaoWei", serif;
+			}
+
+            #current-time {
+                font-size: 20px;
+                color: lightgray;
+                padding: 10px 60px;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="div1_1">
+			<div class="div1_2"></div>
+		</div>
+		<div class="div2_1">
+			邮件已发出
+			<hr>
+			<div class="div2_2">
+				请检查你的邮箱
+			</div>
+			<br>
+			<div class="div2_3">
+				<p>
+					请点击邮箱中的网址以完成后续操作<br>
+					若未收到邮件请检查垃圾邮件
+				</p>
+			</div>
+		</div>
+		<div id="current-time">正在核对请求时间...</div>
+		<script src="https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js"></script>
+		<script>
+			let formattedDateTime = moment().format('YYYY-MM-DD HH:mm:ss');
+			document.getElementById('current-time').innerText = "现在是北京时间：" + formattedDateTime;
+		</script>
+	</body>
+</html>
