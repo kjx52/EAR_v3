@@ -25,6 +25,7 @@
 **详细信息请看：*
 + [阿里云开发者社区](https://developer.aliyun.com/article/1654133)
 + [博客园](https://www.cnblogs.com/skiner/p/18742883)
++ [稀土掘金](https://juejin.cn/post/7476067407128690751)
 
 ***
 ### 更新日志
