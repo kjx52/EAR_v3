@@ -22,6 +22,10 @@
 作者尽力确保其安全性，但因水平有限，若是百密之中有所纰漏，还望各位告知本人。  
 作者联系方式： <kjx52@outlook.com>。
 
+**详细信息请看：*
++ [阿里云开发者社区](https://developer.aliyun.com/article/1654133)
++ [博客园](https://www.cnblogs.com/skiner/p/18742883)
+
 ***
 ### 更新日志
 
